@@ -9,10 +9,19 @@ DESCRIPTION
     are always the first person to have the latest and greatest version.
     It's like getting first post, only useful.
 
+    To use it, add the following in dist.ini:
+
+        [LocalInstall]
+
+    You can specify an alternate install command:
+
+        [LocalInstall]
+        install_command = cpanm .
+
 METHODS
   after_release
     This gets called after the release is completed - it installs the built
-    dist using CPAN.
+    dist using CPAN (unless you specified something different).
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
