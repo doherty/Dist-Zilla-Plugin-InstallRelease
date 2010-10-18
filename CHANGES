@@ -1,5 +1,7 @@
 Revision history for Perl module Dist-Zilla-Plugin-LocalInstall
 
 {{$NEXT}}
+
+0.001     2010-10-18
     * Initial version
     * Added support for specifying the install command
