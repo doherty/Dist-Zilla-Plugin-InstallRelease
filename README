@@ -1,8 +1,8 @@
 NAME
-    Dist::Zilla::Plugin::LocalInstall - installs your dist after releasing
+    Dist::Zilla::Plugin::InstallRelease - installs your dist after releasing
 
 VERSION
-    version 0.001
+    version 0.002
 
 DESCRIPTION
     After doing "dzil release", this plugin will install your dist so you
@@ -11,11 +11,11 @@ DESCRIPTION
 
     To use it, add the following in dist.ini:
 
-        [LocalInstall]
+        [InstallRelease]
 
     You can specify an alternate install command:
 
-        [LocalInstall]
+        [InstallRelease]
         install_command = cpanm .
 
 METHODS
@@ -27,11 +27,11 @@ AVAILABILITY
     The latest version of this module is available from the Comprehensive
     Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
     CPAN site near you, or see
-    <http://search.cpan.org/dist/Dist-Zilla-Plugin-LocalInstall/>.
+    <http://search.cpan.org/dist/Dist-Zilla-Plugin-InstallRelease/>.
 
     The development version lives at
-    <http://github.com/doherty/Dist-Zilla-Plugin-LocalInstall> and may be
-    cloned from <git://github.com/doherty/Dist-Zilla-Plugin-LocalInstall>.
+    <http://github.com/doherty/Dist-Zilla-Plugin-InstallRelease> and may be
+    cloned from <git://github.com/doherty/Dist-Zilla-Plugin-InstallRelease>.
     Instead of sending patches, please fork this project using the standard
     git and github infrastructure.
 
@@ -39,7 +39,7 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://github.com/doherty/Dist-Zilla-Plugin-LocalInstall/issues>.
+    <http://github.com/doherty/Dist-Zilla-Plugin-InstallRelease/issues>.
 
 AUTHOR
     Mike Doherty <doherty@cpan.org>

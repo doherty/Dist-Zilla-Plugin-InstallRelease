@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-package Dist::Zilla::Plugin::LocalInstall;
+package Dist::Zilla::Plugin::InstallRelease;
 # ABSTRACT: installs your dist after releasing
 
 use Carp ();
@@ -17,11 +17,11 @@ like getting first post, only useful.
 
 To use it, add the following in F<dist.ini>:
 
-    [LocalInstall]
+    [InstallRelease]
 
 You can specify an alternate install command:
 
-    [LocalInstall]
+    [InstallRelease]
     install_command = cpanm .
 
 =cut
