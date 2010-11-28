@@ -1,6 +1,7 @@
 Revision history for Perl module Dist-Zilla-Plugin-InstallRelease
 
 {{$NEXT}}
+    * Use Perl_5 license
 
 0.002     2010-11-13
     * Renamed from LocalInstall to InstallRelease
