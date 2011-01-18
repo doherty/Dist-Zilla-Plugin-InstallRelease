@@ -43,7 +43,7 @@ using L<CPAN> (unless you specified something different).
 sub after_release {
     my $self = shift;
 
-    eval {
+    my $success = eval {
         require File::pushd;
         my $built_in = $self->zilla->built_in;
         ## no critic Punctuation
@@ -56,6 +56,8 @@ sub after_release {
         $self->log_debug([ 'installing via %s', \@cmd ]);
         system(@cmd) && $self->log_fatal([ 'Error running %s', \@cmd ]);
     };
+    use Data::Dumper;
+    die $success;
 
     if ($@) {
         $self->log($@);

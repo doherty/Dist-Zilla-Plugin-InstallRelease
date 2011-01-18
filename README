@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::InstallRelease - installs your dist after releasing
 
 VERSION
-    version 0.003
+    version 0.004
 
 DESCRIPTION
     After doing "dzil release", this plugin will install your dist so you
@@ -30,8 +30,8 @@ AVAILABILITY
     <http://search.cpan.org/dist/Dist-Zilla-Plugin-InstallRelease/>.
 
     The development version lives at
-    <http://github.com/doherty/Dist-Zilla-Plugin-InstallRelease.git> and may
-    be cloned from
+    <http://github.com/doherty/Dist-Zilla-Plugin-InstallRelease> and may be
+    cloned from
     <git://github.com/doherty/Dist-Zilla-Plugin-InstallRelease.git>. Instead
     of sending patches, please fork this project using the standard git and
     github infrastructure.
