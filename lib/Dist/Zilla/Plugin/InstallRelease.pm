@@ -43,7 +43,7 @@ using L<CPAN> (unless you specified something different).
 sub after_release {
     my $self = shift;
 
-    eval {
+    my $success = eval {
         require File::pushd;
         my $built_in = $self->zilla->built_in;
         ## no critic Punctuation
@@ -61,8 +61,11 @@ sub after_release {
         $self->log($@);
         $self->log('Install failed');
     }
+    elsif (!$success) {
+        $self->log("Install failed: $success");
+    }
     else {
-        $self->log('Installed OK');
+        $self->log("Installed OK: $success");
     }
     return;
 }
