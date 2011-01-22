@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::InstallRelease - installs your dist after releasing
 
 VERSION
-    version 0.005
+    version 0.006
 
 DESCRIPTION
     After doing "dzil release", this plugin will install your dist so you
