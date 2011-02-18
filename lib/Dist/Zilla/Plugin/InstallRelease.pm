@@ -1,8 +1,8 @@
-use strict;
-use warnings;
-
 package Dist::Zilla::Plugin::InstallRelease;
 # ABSTRACT: installs your dist after releasing
+use strict;
+use warnings;
+# VERSION
 
 use Carp ();
 use Moose;
