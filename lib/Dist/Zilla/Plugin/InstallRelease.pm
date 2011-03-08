@@ -61,10 +61,10 @@ sub after_release {
         $self->log("Install failed: $@");
     }
     elsif ($return == 0) {
-        $self->log("Install OK: $return");
+        $self->log('Install OK');
     }
     else {
-        $self->log("Installed failed: $return");
+        $self->log("Install failed: $return");
     }
     return;
 }
