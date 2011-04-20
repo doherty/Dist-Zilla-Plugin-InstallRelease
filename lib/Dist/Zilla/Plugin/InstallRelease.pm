@@ -1,10 +1,11 @@
 package Dist::Zilla::Plugin::InstallRelease;
-# ABSTRACT: installs your dist after releasing
 use strict;
 use warnings;
+# ABSTRACT: installs your dist after releasing
 # VERSION
 
 use Carp ();
+use autodie;
 use Moose;
 with 'Dist::Zilla::Role::Plugin';
 with 'Dist::Zilla::Role::AfterRelease';
@@ -29,47 +30,43 @@ You can specify an alternate install command:
 has install_command => (
     is      => 'ro',
     isa     => 'Str',
+    predicate => 'has_install_command',
 );
-
-=head1 METHODS
-
-=head2 after_release
-
-This gets called after the release is completed - it installs the built dist
-using L<CPAN> (unless you specified something different).
-
-=cut
 
 sub after_release {
     my $self = shift;
 
-    my $return = eval {
+    eval {
         require File::pushd;
-        my $built_in = $self->zilla->built_in;
-        ## no critic Punctuation
-        my $wd = File::pushd::pushd($built_in);
-        my @cmd = $self->{install_command}
-                    ? split(/ /, $self->{install_command})
-                    : ($^X => '-MCPAN' =>
-                            $^O eq 'MSWin32' ? q{-e"install '.'"} : q{-einstall "."});
-
-        $self->log_debug([ 'installing via %s', \@cmd ]);
-        system(@cmd) && $self->log_fatal([ 'Error running %s', \@cmd ]);
+        my $wd = File::pushd::pushd($self->zilla->built_in);
+        if ($self->has_install_command) {
+            system($self->install_command)
+                && $self->log_fatal([ 'error running %s', [$self->install_command] ]);
+        }
+        else {
+            my @cmd = ($^X, '-MCPAN',
+                $^O eq 'MSWin32' ? q(-e"install '.'") : q(-einstall '.')
+            );
+            system(@cmd) && $self->log_fatal([ 'error running %s', \@cmd ]);
+        }
     };
 
     if ($@) {
-        $self->log("Install failed: $@");
-    }
-    elsif ($return == 0) {
-        $self->log('Install OK');
+        $self->log($@);
+        $self->log('Install failed.');
     }
     else {
-        $self->log("Install failed: $return");
+        $self->log('Install OK');
     }
+
     return;
 }
+
+=for Pod::Coverage
+after_release
+=cut
+
+__PACKAGE__->meta->make_immutable;
 no Moose;
 
 1;
-
-__END__

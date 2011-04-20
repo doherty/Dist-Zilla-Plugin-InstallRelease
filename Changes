@@ -1,6 +1,7 @@
 Revision history for Perl module Dist-Zilla-Plugin-InstallRelease
 
 {{$NEXT}}
+    * Internal refactoring
 
 0.006     2011-01-24
     * Attempt to detect failed installation better
