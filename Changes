@@ -1,6 +1,8 @@
 Revision history for Perl module Dist-Zilla-Plugin-InstallRelease
 
 {{$NEXT}}
+
+0.007     2011-04-22
     * Internal refactoring
 
 0.006     2011-01-24
