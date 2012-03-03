@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::InstallRelease - installs your dist after releasing
 
 VERSION
-    version 0.007
+    version 0.008
 
 DESCRIPTION
     After doing "dzil release", this plugin will install your dist so you
@@ -18,6 +18,8 @@ DESCRIPTION
         [InstallRelease]
         install_command = cpanm .
 
+    This plugin must always come before Dist::Zilla::Plugin::Clean.
+
 AVAILABILITY
     The project homepage is
     <http://p3rl.org/Dist::Zilla::Plugin::InstallRelease>.
@@ -25,14 +27,7 @@ AVAILABILITY
     The latest version of this module is available from the Comprehensive
     Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
     CPAN site near you, or see
-    <http://search.cpan.org/dist/Dist-Zilla-Plugin-InstallRelease/>.
-
-    The development version lives at
-    <http://github.com/doherty/Dist-Zilla-Plugin-InstallRelease> and may be
-    cloned from
-    <git://github.com/doherty/Dist-Zilla-Plugin-InstallRelease.git>. Instead
-    of sending patches, please fork this project using the standard git and
-    github infrastructure.
+    <https://metacpan.org/module/Dist::Zilla::Plugin::InstallRelease/>.
 
 SOURCE
     The development version is on github at
@@ -41,9 +36,8 @@ SOURCE
     <git://github.com/doherty/Dist-Zilla-Plugin-InstallRelease.git>
 
 BUGS AND LIMITATIONS
-    No bugs have been reported.
-
-    Please report any bugs or feature requests through the web interface at
+    You can make new bug reports, and view existing ones, through the web
+    interface at
     <https://github.com/doherty/Dist-Zilla-Plugin-InstallRelease/issues>.
 
 AUTHOR
