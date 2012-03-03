@@ -25,6 +25,8 @@ You can specify an alternate install command:
     [InstallRelease]
     install_command = cpanm .
 
+This plugin must always come before L<Dist::Zilla::Plugin::Clean>.
+
 =cut
 
 has install_command => (
